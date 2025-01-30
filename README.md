@@ -10,3 +10,5 @@ Projeto CRUD desenvolvido para demonstrar habilidades técnicas alinhadas aos se
 ## Tecnologias
 - **Back-end**: Java Com Spring Boot.
 - **Banco de Dados**: PostgreSQL
+
+https://prnt.sc/71pG2AaFffKl

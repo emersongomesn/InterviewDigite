@@ -12,3 +12,5 @@ Projeto CRUD desenvolvido para demonstrar habilidades técnicas alinhadas aos se
 - **Banco de Dados**: PostgreSQL
 
 https://prnt.sc/LpkYHSvkJ-kK
+
+https://prnt.sc/Bm8cXlTyDj8U

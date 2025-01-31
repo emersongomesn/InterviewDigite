@@ -5,12 +5,15 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.digte.interview.digteinterview.DTO.EmployeeDTO;
 import com.digte.interview.digteinterview.entities.Employee;
 import com.digte.interview.digteinterview.repositories.EmployeeRepository;
+import com.digte.interview.digteinterview.services.exceptions.DataBaseException;
 import com.digte.interview.digteinterview.services.exceptions.ResourceNotFoundException;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -58,4 +61,18 @@ public class EmployeeService {
 			throw new ResourceNotFoundException("Id Not Found" + id);
 		}
 	}
+
+	@Transactional(propagation = Propagation.SUPPORTS)
+	public void delete(Long id) {
+		if (!repository.existsById(id)) {
+			throw new ResourceNotFoundException("Resource not found");
+		}
+		try {
+	        	repository.deleteById(id);    		
+		}
+	    	catch (DataIntegrityViolationException e) {
+	        	throw new DataBaseException("Referential integrity failure");
+	   	}
+	}
+
 }

@@ -1,6 +1,6 @@
 # CRUD - Digital Workspace e Admissão Online
 
-Projeto CRUD desenvolvido para demonstrar habilidades técnicas alinhadas aos serviços da **Digte**, como **Digital Workspace** e **Admissão Online**.
+Projeto CRUD 
 
 ## Funcionalidades
 - Fazer uma busca de todas as entidadas.
